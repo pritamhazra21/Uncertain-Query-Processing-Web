@@ -1,10 +1,11 @@
 
 
 * {
-    background-color: rgb(219, 219, 219);
+    /* background-color: rgb(219, 219, 219); */
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+
   }
   
   html{
@@ -22,12 +23,13 @@
   justify-content: center;
   /* position: sticky; */
   top: 0px;
-  margin: 10px;
+  margin: 15px;
   padding: 16px;
   border-radius: 16px;
   z-index: 5;
   font-family: "Poppins", sans-serif;
   background-color: rgba(255, 255, 255);
+  box-shadow: 10px 10px 20px rgb(163, 163, 163);
 }
 
 #logo {
@@ -44,17 +46,60 @@
 }
 
 
-
-.first{
+.upper-con{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
-    margin: 10px;
-    height: 500px;
+    width: 100%;
+    /* background-color: green; */
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: sticky; */
+    margin: 15px;
+    width: 100%;
+    /* height: 500px; */
+    box-shadow: 10px 10px 20px rgb(163, 163, 163);
+    
     padding: 5px;
     border-radius: 16px;
     font-family: "Poppins", sans-serif;
-    background-color: rgba(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    /* border: 1px solid black; */
 }
 
+
+/* ############   TABLE   ########### */
+
+.content-table{
+    border-collapse: collapse;
+    margin: 100px 0;
+    min-width: 500px;
+}
+
+.content-table th{
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-weight: bold;
+}
+.content-table td{
+    /* background-color: white; */
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px;
+    margin: 15px;
+
+}
+
+.content-table tr{
+    border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+.content-table tr:nth-of-type(even){
+    background-color: rgb(245, 245, 245);
+}
