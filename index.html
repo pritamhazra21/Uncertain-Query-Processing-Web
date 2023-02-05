@@ -82,8 +82,15 @@
         </div>
     </section>
 
-    <!-- Compare table celcius kelvin -->
 
+
+
+
+
+
+
+
+    <!-- table celcius kelvin -->
 
     <section class="upper-con">
         <div class="foreground container">
@@ -201,6 +208,13 @@
 
 
 
+
+
+
+
+
+
+
     <!-- Compare result table prev algorithm-->
     <nav class="foreground topbar">
         <h1>Comparing Result using previous algorithm</h1>
@@ -209,17 +223,17 @@
     <section class="upper-con">
         <div class="foreground input-box">
             <h3>Data arround</h3>
-            <input id="prev-algo-data-arround-celcious" type="text">
+            <input id="prev-algo-data-arround-celcious" type="number">
             <h3>alpha cut</h3>
-            <input id="prev-algo-alpha-cut-celcious" type="text">
-            <button>SUBMIT</button>
+            <input id="prev-algo-alpha-cut-celcious" type="number">
+            <button id="prev-algo-celcious-result">SUBMIT</button>
         </div>
         <div class="foreground input-box">
             <h3>Data arround</h3>
-            <input id="prev-algo-data-arround-kelvin" type="text">
+            <input id="prev-algo-data-arround-kelvin" type="number">
             <h3>alpha cut</h3>
-            <input id="prev-algo-alpha-cut-kelvin" type="text">
-            <button>SUBMIT</button>
+            <input id="prev-algo-alpha-cut-kelvin" type="number">
+            <button id="prev-algo-kelvin-result">SUBMIT</button>
         </div>
     </section>
 
@@ -328,6 +342,23 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Compare result table our algorithm-->
     <nav class="foreground topbar">
         <h1>Comparing Result using our algorithm</h1>
@@ -335,17 +366,17 @@
     <section class="upper-con">
         <div class="foreground input-box">
             <h3>Data arround</h3>
-            <input type="text">
+            <input id="ours-algo-data-arround-celcious" type="number">
             <h3>alpha cut</h3>
-            <input type="text">
-            <button>SUBMIT</button>
+            <input id="ours-algo-alpha-cut-celcious" type="number">
+            <button id="ours-algo-celcious-result">SUBMIT</button>
         </div>
         <div class="foreground input-box">
             <h3>Data arround</h3>
-            <input type="text">
+            <input id="ours-algo-data-arround-kelvin" type="text">
             <h3>alpha cut</h3>
-            <input type="text">
-            <button>SUBMIT</button>
+            <input id="ours-algo-alpha-cut-kelvin" type="text">
+            <button id="ours-algo-kelvin-result">SUBMIT</button>
         </div>
     </section>
     <section class="upper-con">
@@ -451,6 +482,17 @@
 
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -463,15 +505,15 @@
     <section class="upper-con">
         <div class="foreground input-box">
             <h3>Data arround</h3>
-            <input type="text">
+            <input id="second-query-data-arround" type="text">
             <h3>alpha cut</h3>
-            <input type="text">
-            <button>SUBMIT</button>
+            <input id="second-query-alpha-cut" type="text">
+            <button id="second-query-result">SUBMIT</button>
         </div>
     </section>
     <section class="upper-con">
         <div class="foreground container">
-            <table class="content-table">
+            <table id="second-query-table" class="content-table">
                 <!-- <thead> -->
                 <tr>
                     <th>City</th>
@@ -530,26 +572,47 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- 3rd query result -->
     <nav class="foreground topbar">
         <h1>3rd query</h1>
     </nav>
     <section class="upper-con">
         <div class="foreground input-box">
-            <h3>Data arround</h3>
-            <input type="text">
+            <h3>Data arround temp</h3>
+            <input id="third-query-data-arround-temp" type="number">
             <h3>alpha cut</h3>
-            <input type="text">
-            <h3>Data arround</h3>
-            <input type="text">
+            <input id="third-query-alpha-cut-temp" type="number">
+            <h3>Data arround prec</h3>
+            <input id="third-query-data-arround-prec" type="text">
             <h3>alpha cut</h3>
-            <input type="text">
-            <button>SUBMIT</button>
+            <input id="third-query-alpha-cut-prec" type="text">
+            <button id="third-query-result">SUBMIT</button>
         </div>
     </section>
     <section class="upper-con">
         <div class="foreground container">
-            <table class="content-table">
+            <table id="third-query-table" class="content-table">
                 <!-- <thead> -->
                 <tr>
                     <th>City</th>
