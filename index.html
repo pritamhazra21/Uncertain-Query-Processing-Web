@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="topbar">
+    <nav class="foreground topbar">
         <div id="logo">
             <img src="images.png" />
         </div>
@@ -21,9 +21,9 @@
     <!-- MAIN TABLE -->
 
     <section class="upper-con">
-        <div class="container">
+        <div class="foreground container">
             <h4>Main Table</h4>
-            <table class="content-table">
+            <table id="main-table" class="content-table">
                 <!-- <thead> -->
                 <tr>
                     <th>City</th>
@@ -86,13 +86,13 @@
 
 
     <section class="upper-con">
-        <div class="container">
+        <div class="foreground container">
             <h4>Data with celcious</h4>
-            <table class="content-table">
+            <table id="table-celcious" class="content-table">
                 <!-- <thead> -->
                 <tr>
                     <th>City</th>
-                    <th>Temp</th>
+                    <th>Temp(C)</th>
                 </tr>
                 <!-- </thead>
                 <tbody> -->
@@ -141,14 +141,14 @@
                 <!-- </tbody>     -->
             </table>
         </div>
-        <div class="container">
+        <div class="foreground container">
             <h4>
                 Data with Kelvin
             </h4>
-            <table class="content-table">
+            <table id="table-kelvin" class="content-table">
                 <tr>
                     <th>City</th>
-                    <th>Temp</th>
+                    <th>Temp(K)</th>
                 </tr>
                 <tr>
                     <td>Kolkata</td>
@@ -199,13 +199,34 @@
 
 
 
+
+
     <!-- Compare result table prev algorithm-->
-    <nav class="topbar">
+    <nav class="foreground topbar">
         <h1>Comparing Result using previous algorithm</h1>
     </nav>
+        <!-- INPUT BOX -->
     <section class="upper-con">
-        <div class="container">
-            <table class="content-table">
+        <div class="foreground input-box">
+            <h3>Data arround</h3>
+            <input id="prev-algo-data-arround-celcious" type="text">
+            <h3>alpha cut</h3>
+            <input id="prev-algo-alpha-cut-celcious" type="text">
+            <button>SUBMIT</button>
+        </div>
+        <div class="foreground input-box">
+            <h3>Data arround</h3>
+            <input id="prev-algo-data-arround-kelvin" type="text">
+            <h3>alpha cut</h3>
+            <input id="prev-algo-alpha-cut-kelvin" type="text">
+            <button>SUBMIT</button>
+        </div>
+    </section>
+
+    <section class="upper-con">
+
+        <div class="foreground container">
+            <table id="prev-algo-celcious-table" class="content-table">
                 <tr>
                     <th>City</th>
                     <th>Temp</th>
@@ -254,7 +275,7 @@
                 </tr>
             </table>
         </div>
-        <div class="container">
+        <div id="prev-algo-kelvin-table" class="foreground container">
             <table class="content-table">
                 <tr>
                     <th>City</th>
@@ -308,11 +329,27 @@
     </section>
 
     <!-- Compare result table our algorithm-->
-    <nav class="topbar">
+    <nav class="foreground topbar">
         <h1>Comparing Result using our algorithm</h1>
     </nav>
     <section class="upper-con">
-        <div class="container">
+        <div class="foreground input-box">
+            <h3>Data arround</h3>
+            <input type="text">
+            <h3>alpha cut</h3>
+            <input type="text">
+            <button>SUBMIT</button>
+        </div>
+        <div class="foreground input-box">
+            <h3>Data arround</h3>
+            <input type="text">
+            <h3>alpha cut</h3>
+            <input type="text">
+            <button>SUBMIT</button>
+        </div>
+    </section>
+    <section class="upper-con">
+        <div class="foreground container">
             <table class="content-table">
                 <tr>
                     <th>City</th>
@@ -362,7 +399,7 @@
                 </tr>
             </table>
         </div>
-        <div class="container">
+        <div class="foreground container">
             <table class="content-table">
                 <tr>
                     <th>City</th>
@@ -415,12 +452,25 @@
         </div>
     </section>
 
+
+
+
+
     <!-- 2nd query result -->
-    <nav class="topbar">
+    <nav class="foreground topbar">
         <h1>2nd query</h1>
     </nav>
     <section class="upper-con">
-        <div class="container">
+        <div class="foreground input-box">
+            <h3>Data arround</h3>
+            <input type="text">
+            <h3>alpha cut</h3>
+            <input type="text">
+            <button>SUBMIT</button>
+        </div>
+    </section>
+    <section class="upper-con">
+        <div class="foreground container">
             <table class="content-table">
                 <!-- <thead> -->
                 <tr>
@@ -481,11 +531,24 @@
     </section>
 
     <!-- 3rd query result -->
-    <nav class="topbar">
+    <nav class="foreground topbar">
         <h1>3rd query</h1>
     </nav>
     <section class="upper-con">
-        <div class="container">
+        <div class="foreground input-box">
+            <h3>Data arround</h3>
+            <input type="text">
+            <h3>alpha cut</h3>
+            <input type="text">
+            <h3>Data arround</h3>
+            <input type="text">
+            <h3>alpha cut</h3>
+            <input type="text">
+            <button>SUBMIT</button>
+        </div>
+    </section>
+    <section class="upper-con">
+        <div class="foreground container">
             <table class="content-table">
                 <!-- <thead> -->
                 <tr>
