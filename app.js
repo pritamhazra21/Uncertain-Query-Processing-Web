@@ -1,6 +1,5 @@
 console.log("hello it is working");
 
-
 const city = ["Bangalore", "Darjeeling", "Dehradun", "Delhi", "Kanyakumari", "Kargil", "Kolkata", "Leh", "Mijoram", "Mumbai", "Rajkot"];
 const temperatureInCelcious = [26, 16, 21, 26, 27, 2, 28, 8, 24, 33, 33];
 const precipitation = [23, 18, 12, 10, 77, 22, 8, 23, 9, 2, 0];
@@ -46,6 +45,8 @@ var tableQuery3;
 
 var tableStringPrevAlgoCelcious;
 var tableStringPrevAlgoKelvin;
+var tableStringOurAlgoCelcious;
+var tableStringOurAlgoKelvin;
 
 var inputPrevAlgoCelciousDataArround = document.getElementById("prev-algo-data-arround-celcious");
 var inputPrevAlgoCelciousAlphaCut = document.getElementById("prev-algo-alpha-cut-celcious");
@@ -103,11 +104,31 @@ btnPrevAlgoKelvin.addEventListener("click", function(e){
 });
 
 btnOurAlgoCelcious.addEventListener("click", function(e){
-    tableOurAlgoCelcious.innerHTML = "";
+    var valueOurAlgoCelciousDataArround = parseFloat(inputOurAlgoCelciousDataArround.value);
+    var valueOurAlgoCelciousAlphaCut = parseFloat(inputOurAlgoCelciousAlphaCut.value);
+    tableStringOurAlgoCelcious = "<tr><th>City</th><th>Temp(C)</th></tr>";
+    console.log(temperatureInCelcious)
+    ourAlgorithm(temperatureInCelcious, temparatureMembershipValue, valueOurAlgoCelciousDataArround);
+    for(let i = 0; i < city.length; i++){
+        if(temparatureMembershipValue[i]*100 >= valueOurAlgoCelciousAlphaCut){
+            tableStringOurAlgoCelcious += "<tr><td>"+ city[i] +"</td><td>"+ temperatureInCelcious[i] +"</td></tr>";
+        }
+    }
+    tableOurAlgoCelcious.innerHTML = tableStringOurAlgoCelcious;
 });
 
 btnOurAlgoKelvin.addEventListener("click", function(e){
-    tableOurAlgoKelvin.innerHTML = "";
+    var valueOurAlgoKelvinDataArround = parseFloat(inputOurAlgoKelvinDataArround.value);
+    var valueOurAlgoKelvinAlphaCut = parseFloat(inputOurAlgoKelvinAlphaCut.value);
+    tableStringOurAlgoKelvin = "<tr><th>City</th><th>Temp(C)</th></tr>";
+    console.log(temperatureInKelvin)
+    ourAlgorithm(temperatureInKelvin, temparatureMembershipValue, valueOurAlgoKelvinDataArround);
+    for(let i = 0; i < city.length; i++){
+        if(temparatureMembershipValue[i]*100 >= valueOurAlgoKelvinAlphaCut){
+            tableStringOurAlgoKelvin += "<tr><td>"+ city[i] +"</td><td>"+ temperatureInKelvin[i] +"</td></tr>";
+        }
+    }
+    tableOurAlgoKelvin.innerHTML = tableStringOurAlgoKelvin;
 });
 
 
@@ -129,5 +150,17 @@ function previousAlgorithm(array, arrayMembershipValue, fuzzyData){
     for(let i = 0; i < array.length; i++){
         arrayMembershipValue[i] = 1 - (Math.abs(fuzzyData- array[i]) / avg);
     }
+    console.log(arrayMembershipValue);
+}
+
+function ourAlgorithm(array, arrayMembershipValue, fuzzyData){
+    var min = Math.min(...array);
+    var max = Math.max(...array);
+    var range = max - min;
+    for(let i = 0; i <array.length; i++){
+        arrayMembershipValue[i] = 1 - Math.abs(array[i] - fuzzyData)/range;
+        arrayMembershipValue[i] = (arrayMembershipValue[i] <= 0) ? 0 : arrayMembershipValue[i];
+    }
+    console.log("our algo")
     console.log(arrayMembershipValue);
 }
