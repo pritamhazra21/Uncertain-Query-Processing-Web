@@ -55,14 +55,14 @@ var btnOurAlgoKelvin = document.getElementById("ours-algo-kelvin-result");
 
 
 btnPrevAlgoCelcious.addEventListener("click", function(e){
-    var valuePrevAlgoCelciousDataArround = inputPrevAlgoCelciousDataArround.value;
-    var valuePrevAlgoCelciousAlphaCut = inputPrevAlgoCelciousAlphaCut.value;
+    var valuePrevAlgoCelciousDataArround = parseFloat(inputPrevAlgoCelciousDataArround.value);
+    var valuePrevAlgoCelciousAlphaCut = parseFloat(inputPrevAlgoCelciousAlphaCut.value);
 
-    inputPrevAlgoKelvinDataArround.value = parseFloat(valuePrevAlgoCelciousDataArround) + 273.15;
+    inputPrevAlgoKelvinDataArround.value = valuePrevAlgoCelciousDataArround + 273.15;
     inputPrevAlgoKelvinAlphaCut.value = valuePrevAlgoCelciousAlphaCut;
     inputOurAlgoCelciousDataArround.value = valuePrevAlgoCelciousDataArround;
     inputOurAlgoCelciousAlphaCut.value = valuePrevAlgoCelciousAlphaCut;
-    inputOurAlgoKelvinDataArround.value = parseFloat(valuePrevAlgoCelciousDataArround) + 273.15;
+    inputOurAlgoKelvinDataArround.value = valuePrevAlgoCelciousDataArround + 273.15;
     inputOurAlgoKelvinAlphaCut.value = valuePrevAlgoCelciousAlphaCut;
 });
 
