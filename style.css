@@ -1,5 +1,5 @@
 * {
-    /* background-color: rgb(219, 219, 219); */
+    /* background-color: rgb(255, 255, 255); */
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
@@ -10,9 +10,67 @@
       scroll-behavior: smooth;
   }
 
+:root{
+    --title-color: #40514e;
+    --foreground-color: #11999e;
+    --table1: #30e3ca;
+    --table2: #fef6f6;
+}
+
+:root{
+    --title-color: #dba39a;
+    --foreground-color: #f0dbdb;
+    --table1: #f5ebe0;
+    --table2: #fefcf3;
+}
+
+:root{
+    --title-color: #222831;
+    --foreground-color: #393E46;
+    --table1: #00ADB5;
+    --table2: #EEEEEE;
+}
+:root{
+    --title-color: #7286D3;
+    --foreground-color: #8EA7E9;
+    --table1: #E5E0FF;
+    --table2: #FFF2F2;
+}
+:root{
+    --title-color: #FD8A8A;
+    --foreground-color: #F1F7B5;
+    --table1: #A8D1D1;
+    --table2: #9EA1D4;
+}
+:root{
+    --title-color: #58828B;
+    --foreground-color: #5E9387;
+    --table1: #C8E29D;
+    --table2: #F2F299;
+}
+:root{
+    --title-color: #E5D9B6;
+    --foreground-color: #A4BE7B;
+    --table1: #5F8D4E;
+    --table2: #285430;
+}
+:root{
+    --title-color: #285430;
+    --foreground-color: #5F8D4E;
+    --table1: #A4BE7B;
+    --table2: #E5D9B6;
+}
+:root{
+    --title-color: #6E85B7;
+    --foreground-color: #B2C8DF;
+    --table1: #C4D7E0;
+    --table2: #F8F9D7;
+}
+
+
 
 .foreground{
-    background-color: rgb(4, 0, 255);
+    background-color: var(--foreground-color);
     padding: 16px;
     margin: 16px;
     border-radius: 16px;
@@ -20,9 +78,9 @@
 }
 
 
-/*  ########### TOPBAR ############### */
 
 .topbar {
+    background-color: var(--title-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +89,7 @@
 
 #logo {
   margin-right: 50%;
-  background-color: white;
+  /* background-color: white; */
 }
 
 #logo img {
@@ -64,7 +122,8 @@ input{
     padding: 8px;
     margin: 5px 15px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--title-color);
+    background-color: var(--table2);
     border-radius: 8px;
 }
 
@@ -74,7 +133,7 @@ button{
     border-radius: 8px;
     box-shadow: none;
     border: none;
-    background-color: #a4b4ff;
+    background-color: var(--title-color);
 }
 
 .container h4{
@@ -87,11 +146,11 @@ button{
 .content-table{
     border-collapse: collapse;
     margin: 50px 0;
-    min-width: 600px;
+    min-width: 750px;
 }
 
 .content-table th{
-    background-color: rgb(39, 146, 62);
+    background-color: var(--title-color);
     text-align: left;
     font-weight: bold;
 }
@@ -104,14 +163,14 @@ button{
 }
 
 .content-table tr{
-    border-bottom: 1px solid rgb(189, 189, 189);
+    border-bottom: var(--title-color);
 }
 
 .content-table tr:nth-of-type(even){
-    background-color: rgb(255, 251, 0);
+    background-color: var(--table1);
 }
 .content-table tr:nth-of-type(odd){
-    background-color: rgb(0, 255, 136);
+    background-color: var(--table2);
 }
 
 
