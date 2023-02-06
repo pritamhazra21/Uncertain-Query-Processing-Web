@@ -92,7 +92,7 @@ btnPrevAlgoKelvin.addEventListener("click", function(e){
     var valuePrevAlgoKelvinDataArround = parseFloat(inputPrevAlgoKelvinDataArround.value);
     var valuePrevAlgoKelvinAlphaCut = parseFloat(inputPrevAlgoKelvinAlphaCut.value);
 
-    tableStringPrevAlgoKelvin = "<tr><th>City</th><th>Temp</th></tr>"
+    tableStringPrevAlgoKelvin = "<tr><th>City</th><th>Temp(K)</th></tr>"
     previousAlgorithm(temperatureInKelvin, temparatureMembershipValue, valuePrevAlgoKelvinDataArround);
     for(let i = 0; i < city.length; i++){
         if(temparatureMembershipValue[i]*100 >= valuePrevAlgoKelvinAlphaCut){
