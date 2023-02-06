@@ -36,6 +36,10 @@ for(let i = 0; i < city.length; i++){
 }
 KelvinTable.innerHTML = KelvinTableString;
 
+
+
+// ALL VARIABLES
+
 var tablePrevAlgoCelcious = document.getElementById("prev-algo-celcious-table");
 var tablePrevALgoKelvin = document.getElementById("prev-algo-kelvin-table");
 var tableOurAlgoCelcious = document.getElementById("our-algo-celcious-table");
@@ -64,7 +68,7 @@ var btnOurAlgoCelcious = document.getElementById("ours-algo-celcious-result");
 var btnOurAlgoKelvin = document.getElementById("ours-algo-kelvin-result");
 
 
-
+// BUTTUNS
 
 btnPrevAlgoCelcious.addEventListener("click", function(e){
     var valuePrevAlgoCelciousDataArround = parseFloat(inputPrevAlgoCelciousDataArround.value);
@@ -132,7 +136,7 @@ btnOurAlgoKelvin.addEventListener("click", function(e){
 });
 
 
-
+// ALGORITHMS
 
 function previousAlgorithm(array, arrayMembershipValue, fuzzyData){
     var min = Math.min(...array);
