@@ -8,14 +8,14 @@ var temparatureMembershipValue = new Array(10);
 var precipitationMembershipValue = new Array(10);
 
 
-for(let i = 0; i < temperatureInCelcious.length; i++){
+for (let i = 0; i < temperatureInCelcious.length; i++) {
     temperatureInKelvin[i] = temperatureInCelcious[i] + 273.15;
 }
 
 // MAIN TABLE
 var MainTable = document.getElementById("main-table");
 var MainTableString = "<tr><th>City</th><th>Temperature (C)</th><th>Chances of Precipitation</th></tr>";
-for(let i = 0; i < city.length; i++){
+for (let i = 0; i < city.length; i++) {
     MainTableString += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td><td>" + precipitation[i] + "</td></tr>";
 }
 MainTable.innerHTML = MainTableString;
@@ -23,7 +23,7 @@ MainTable.innerHTML = MainTableString;
 // CELCIOUS TABLE
 var CelciousTable = document.getElementById("table-celcious");
 var CelciousTableString = "<tr><th>City</th><th>Temperature (C)</th></tr>";
-for(let i = 0; i < city.length; i++){
+for (let i = 0; i < city.length; i++) {
     CelciousTableString += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td></tr>";
 }
 CelciousTable.innerHTML = CelciousTableString;
@@ -31,7 +31,7 @@ CelciousTable.innerHTML = CelciousTableString;
 // KELVIN TABLE
 var KelvinTable = document.getElementById("table-kelvin");
 var KelvinTableString = "<tr><th>City</th><th>Temperature (K)</th></tr>";
-for(let i = 0; i < city.length; i++){
+for (let i = 0; i < city.length; i++) {
     KelvinTableString += "<tr><td>" + city[i] + "</td><td>" + temperatureInKelvin[i] + "</td></tr>";
 }
 KelvinTable.innerHTML = KelvinTableString;
@@ -44,13 +44,15 @@ var tablePrevAlgoCelcious = document.getElementById("prev-algo-celcious-table");
 var tablePrevALgoKelvin = document.getElementById("prev-algo-kelvin-table");
 var tableOurAlgoCelcious = document.getElementById("our-algo-celcious-table");
 var tableOurAlgoKelvin = document.getElementById("our-algo-kelvin-table");
-var tableQuery2;
-var tableQuery3;
+var table2ndQuery = document.getElementById("second-query-table");
+var table3rdQuery = document.getElementById("third-query-table");
 
 var tableStringPrevAlgoCelcious;
 var tableStringPrevAlgoKelvin;
 var tableStringOurAlgoCelcious;
 var tableStringOurAlgoKelvin;
+var tableString2ndQuery;
+var tableString3rdQuery;
 
 var inputPrevAlgoCelciousDataArround = document.getElementById("prev-algo-data-arround-celcious");
 var inputPrevAlgoCelciousAlphaCut = document.getElementById("prev-algo-alpha-cut-celcious");
@@ -62,15 +64,26 @@ var inputOurAlgoCelciousAlphaCut = document.getElementById("ours-algo-alpha-cut-
 var inputOurAlgoKelvinDataArround = document.getElementById("ours-algo-data-arround-kelvin");
 var inputOurAlgoKelvinAlphaCut = document.getElementById("ours-algo-alpha-cut-kelvin");
 
+var input2ndQueryPrecDataArround = document.getElementById("second-query-data-arround");
+var input2ndQueryAlphaCut = document.getElementById("second-query-alpha-cut");
+
+var input3rdQueryTempDataArround = document.getElementById("third-query-data-arround-temp");
+var input3rdQueryPrecDataArround = document.getElementById("third-query-data-arround-prec");
+var input3rdQueryTempAlphaCut = document.getElementById("third-query-alpha-cut-temp");
+var input3rdQueryPrecAlphaCut = document.getElementById("third-query-alpha-cut-prec");
+
+
 var btnPrevAlgoCelcious = document.getElementById("prev-algo-celcious-result");
 var btnPrevAlgoKelvin = document.getElementById("prev-algo-kelvin-result");
 var btnOurAlgoCelcious = document.getElementById("ours-algo-celcious-result");
 var btnOurAlgoKelvin = document.getElementById("ours-algo-kelvin-result");
+var btn2ndQuery = document.getElementById("second-query-result");
+var btn3rdQuery = document.getElementById("third-query-result");
 
 
 // BUTTUNS
 
-btnPrevAlgoCelcious.addEventListener("click", function(e){
+btnPrevAlgoCelcious.addEventListener("click", function (e) {
     var valuePrevAlgoCelciousDataArround = parseFloat(inputPrevAlgoCelciousDataArround.value);
     var valuePrevAlgoCelciousAlphaCut = parseFloat(inputPrevAlgoCelciousAlphaCut.value);
 
@@ -83,9 +96,9 @@ btnPrevAlgoCelcious.addEventListener("click", function(e){
 
     tableStringPrevAlgoCelcious = "<tr><th>City</th><th>Temp(C)</th></tr>"
     previousAlgorithm(temperatureInCelcious, temparatureMembershipValue, valuePrevAlgoCelciousDataArround);
-    for(let i = 0; i < city.length; i++){
-        if(temparatureMembershipValue[i]*100 >= valuePrevAlgoCelciousAlphaCut){
-            tableStringPrevAlgoCelcious += "<tr><td>"+ city[i] +"</td><td>"+ temperatureInCelcious[i] +"</td></tr>";
+    for (let i = 0; i < city.length; i++) {
+        if (temparatureMembershipValue[i] * 100 >= valuePrevAlgoCelciousAlphaCut) {
+            tableStringPrevAlgoCelcious += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td></tr>";
         }
     }
     tablePrevAlgoCelcious.innerHTML = tableStringPrevAlgoCelcious;
@@ -93,76 +106,111 @@ btnPrevAlgoCelcious.addEventListener("click", function(e){
 
 });
 
-btnPrevAlgoKelvin.addEventListener("click", function(e){
+btnPrevAlgoKelvin.addEventListener("click", function (e) {
     var valuePrevAlgoKelvinDataArround = parseFloat(inputPrevAlgoKelvinDataArround.value);
     var valuePrevAlgoKelvinAlphaCut = parseFloat(inputPrevAlgoKelvinAlphaCut.value);
 
     tableStringPrevAlgoKelvin = "<tr><th>City</th><th>Temp(K)</th></tr>"
     previousAlgorithm(temperatureInKelvin, temparatureMembershipValue, valuePrevAlgoKelvinDataArround);
-    for(let i = 0; i < city.length; i++){
-        if(temparatureMembershipValue[i]*100 >= valuePrevAlgoKelvinAlphaCut){
-            tableStringPrevAlgoKelvin += "<tr><td>"+ city[i] +"</td><td>"+ temperatureInKelvin[i] +"</td></tr>";
+    for (let i = 0; i < city.length; i++) {
+        if (temparatureMembershipValue[i] * 100 >= valuePrevAlgoKelvinAlphaCut) {
+            tableStringPrevAlgoKelvin += "<tr><td>" + city[i] + "</td><td>" + temperatureInKelvin[i] + "</td></tr>";
         }
     }
     tablePrevALgoKelvin.innerHTML = tableStringPrevAlgoKelvin;
 });
 
-btnOurAlgoCelcious.addEventListener("click", function(e){
+btnOurAlgoCelcious.addEventListener("click", function (e) {
     var valueOurAlgoCelciousDataArround = parseFloat(inputOurAlgoCelciousDataArround.value);
     var valueOurAlgoCelciousAlphaCut = parseFloat(inputOurAlgoCelciousAlphaCut.value);
+
     tableStringOurAlgoCelcious = "<tr><th>City</th><th>Temp(C)</th></tr>";
-    console.log(temperatureInCelcious)
     ourAlgorithm(temperatureInCelcious, temparatureMembershipValue, valueOurAlgoCelciousDataArround);
-    for(let i = 0; i < city.length; i++){
-        if(temparatureMembershipValue[i]*100 >= valueOurAlgoCelciousAlphaCut){
-            tableStringOurAlgoCelcious += "<tr><td>"+ city[i] +"</td><td>"+ temperatureInCelcious[i] +"</td></tr>";
+    for (let i = 0; i < city.length; i++) {
+        if (temparatureMembershipValue[i] * 100 >= valueOurAlgoCelciousAlphaCut) {
+            tableStringOurAlgoCelcious += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td></tr>";
         }
     }
     tableOurAlgoCelcious.innerHTML = tableStringOurAlgoCelcious;
 });
 
-btnOurAlgoKelvin.addEventListener("click", function(e){
+btnOurAlgoKelvin.addEventListener("click", function (e) {
     var valueOurAlgoKelvinDataArround = parseFloat(inputOurAlgoKelvinDataArround.value);
     var valueOurAlgoKelvinAlphaCut = parseFloat(inputOurAlgoKelvinAlphaCut.value);
+
     tableStringOurAlgoKelvin = "<tr><th>City</th><th>Temp(C)</th></tr>";
-    console.log(temperatureInKelvin)
     ourAlgorithm(temperatureInKelvin, temparatureMembershipValue, valueOurAlgoKelvinDataArround);
-    for(let i = 0; i < city.length; i++){
-        if(temparatureMembershipValue[i]*100 >= valueOurAlgoKelvinAlphaCut){
-            tableStringOurAlgoKelvin += "<tr><td>"+ city[i] +"</td><td>"+ temperatureInKelvin[i] +"</td></tr>";
+    for (let i = 0; i < city.length; i++) {
+        if (temparatureMembershipValue[i] * 100 >= valueOurAlgoKelvinAlphaCut) {
+            tableStringOurAlgoKelvin += "<tr><td>" + city[i] + "</td><td>" + temperatureInKelvin[i] + "</td></tr>";
         }
     }
     tableOurAlgoKelvin.innerHTML = tableStringOurAlgoKelvin;
 });
 
+btn2ndQuery.addEventListener("click", function (e) {
+    var value2ndQueryPrecDataArround = parseFloat(input2ndQueryPrecDataArround.value);
+    var value2ndQueryAlphaCut = parseFloat(input2ndQueryAlphaCut.value);
+    tableString2ndQuery = "<tr><th>City</th><th>Temp(C)</th><th>Precipitation</th></tr>";
+    ourAlgorithm(precipitation, precipitationMembershipValue, value2ndQueryPrecDataArround);
+    for (let i = 0; i < city.length; i++) {
+        if (precipitationMembershipValue[i] * 100 >= value2ndQueryAlphaCut) {
+            tableString2ndQuery += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td><td>" + precipitation[i] + "</td></tr>";
+        }
+    }
+    table2ndQuery.innerHTML = tableString2ndQuery;
+
+});
+
+btn3rdQuery.addEventListener("click", function (e) {
+    var value3rdQueryTempDataArround = parseFloat(input3rdQueryTempDataArround.value);
+    var value3rdQueryPrecDataArround = parseFloat(input3rdQueryPrecDataArround.value);
+    var value3rdQueryTempAlphaCut = parseFloat(input3rdQueryTempAlphaCut.value);
+    var value3rdQueryPrecAlphaCut = parseFloat(input3rdQueryPrecAlphaCut.value);
+    console.log(value3rdQueryPrecDataArround);
+    console.log(value3rdQueryPrecAlphaCut);
+    tableString3rdQuery = "<tr><th>City</th><th>Temp(C)</th><th>Precipitation</th></tr>";
+    ourAlgorithm(temperatureInCelcious, temparatureMembershipValue, value3rdQueryTempDataArround);
+    ourAlgorithm(precipitation, precipitationMembershipValue, value3rdQueryPrecDataArround);
+    for(let i = 0; i < city.length; i++){
+        if((temparatureMembershipValue[i]*100 >= value3rdQueryTempAlphaCut) ){
+            if((precipitationMembershipValue[i]*100 >= value3rdQueryPrecAlphaCut)){
+                tableString3rdQuery+= "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td><td>" + precipitation[i] + "</td></tr>";
+
+            }
+        }
+    }
+    table3rdQuery.innerHTML = tableString3rdQuery;
+
+});
 
 // ALGORITHMS
 
-function previousAlgorithm(array, arrayMembershipValue, fuzzyData){
+function previousAlgorithm(array, arrayMembershipValue, fuzzyData) {
     var min = Math.min(...array);
     var max = Math.max(...array);
-    var range = max-min;
+    var range = max - min;
     var sum = 0;
-    for(let i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
         sum += array[i];
     }
     var avg = sum / array.length;
     var temp = avg;
-    while(avg <= range){
-        avg =+ avg + temp;
+    while (avg <= range) {
+        avg = + avg + temp;
     }
-    for(let i = 0; i < array.length; i++){
-        arrayMembershipValue[i] = 1 - (Math.abs(fuzzyData- array[i]) / avg);
+    for (let i = 0; i < array.length; i++) {
+        arrayMembershipValue[i] = 1 - (Math.abs(fuzzyData - array[i]) / avg);
     }
     console.log(arrayMembershipValue);
 }
 
-function ourAlgorithm(array, arrayMembershipValue, fuzzyData){
+function ourAlgorithm(array, arrayMembershipValue, fuzzyData) {
     var min = Math.min(...array);
     var max = Math.max(...array);
     var range = max - min;
-    for(let i = 0; i <array.length; i++){
-        arrayMembershipValue[i] = 1 - Math.abs(array[i] - fuzzyData)/range;
+    for (let i = 0; i < array.length; i++) {
+        arrayMembershipValue[i] = 1 - Math.abs(array[i] - fuzzyData) / range;
         arrayMembershipValue[i] = (arrayMembershipValue[i] <= 0) ? 0 : arrayMembershipValue[i];
     }
     console.log("our algo")
