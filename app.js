@@ -44,3 +44,4 @@ for(let i = 0; i < city.length; i++){
 
 KelvinTable.innerHTML = KelvinTableString;
 
+console.log("hello it is working");
