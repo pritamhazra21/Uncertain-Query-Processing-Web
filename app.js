@@ -16,9 +16,9 @@ for (let i = 0; i < temperatureInCelcious.length; i++) {
 
 //          MAIN TABLE
 var MainTable = document.getElementById("main-table");
-var MainTableString = "<tr><th>City</th><th>Temperature (C)</th><th>Chances of Precipitation</th></tr>";
+var MainTableString = "<tr><th>City</th><th>Temp (C)</th><th>Temp (K)</th><th>Chances of Precipitation</th></tr>";
 for (let i = 0; i < city.length; i++) {
-    MainTableString += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td><td>" + precipitation[i] + "</td></tr>";
+    MainTableString += "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] +"</td><td>" + temperatureInKelvin[i] + "</td><td>" + precipitation[i] + "</td></tr>";
 }
 MainTable.innerHTML = MainTableString;
 
@@ -73,8 +73,7 @@ var input2ndQueryAlphaCut = document.getElementById("second-query-alpha-cut");
 
 var input3rdQueryTempDataArround = document.getElementById("third-query-data-arround-temp");
 var input3rdQueryPrecDataArround = document.getElementById("third-query-data-arround-prec");
-var input3rdQueryTempAlphaCut = document.getElementById("third-query-alpha-cut-temp");
-var input3rdQueryPrecAlphaCut = document.getElementById("third-query-alpha-cut-prec");
+var input3rdQueryAlphaCut = document.getElementById("third-query-alpha-cut-prec");
 
 //             BUTTONS
 
@@ -183,16 +182,15 @@ btn2ndQuery.addEventListener("click", function (e) {
 btn3rdQuery.addEventListener("click", function (e) {
     var value3rdQueryTempDataArround = parseFloat(input3rdQueryTempDataArround.value);
     var value3rdQueryPrecDataArround = parseFloat(input3rdQueryPrecDataArround.value);
-    var value3rdQueryTempAlphaCut = parseFloat(input3rdQueryTempAlphaCut.value);
-    var value3rdQueryPrecAlphaCut = parseFloat(input3rdQueryPrecAlphaCut.value);
+    var value3rdQueryAlphaCut = parseFloat(input3rdQueryAlphaCut.value);
     console.log(value3rdQueryPrecDataArround);
-    console.log(value3rdQueryPrecAlphaCut);
+    console.log(value3rdQueryAlphaCut);
     let tableString3rdQuery = "<tr><th>City</th><th>Temp(C)</th><th>Precipitation</th></tr>";
     ourAlgorithm(temperatureInCelcious, temparatureMembershipValue, value3rdQueryTempDataArround);
     ourAlgorithm(precipitation, precipitationMembershipValue, value3rdQueryPrecDataArround);
     for(let i = 0; i < city.length; i++){
-        if((temparatureMembershipValue[i]*100 >= value3rdQueryTempAlphaCut) ){
-            if((precipitationMembershipValue[i]*100 >= value3rdQueryPrecAlphaCut)){
+        if((temparatureMembershipValue[i]*100 >= value3rdQueryAlphaCut) ){
+            if((precipitationMembershipValue[i]*100 >= value3rdQueryAlphaCut)){
                 tableString3rdQuery+= "<tr><td>" + city[i] + "</td><td>" + temperatureInCelcious[i] + "</td><td>" + precipitation[i] + "</td></tr>";
 
             }

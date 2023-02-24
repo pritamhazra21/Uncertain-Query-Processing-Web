@@ -67,20 +67,40 @@
     --table2: #F8F9D7;
 }
 
+.sidebar {
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
 
+.top{
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    padding: none;
+    margin: none;
+    top: 0;
+}
+
+.content {
+    margin-left: 35%;
+}
 
 .foreground{
     background-color: var(--foreground-color);
     padding: 16px;
     margin: 16px;
     border-radius: 16px;
-    box-shadow: 10px 10px 20px rgb(163, 163, 163);
+    /* box-shadow: 10px 10px 20px rgb(163, 163, 163); */
 }
 
 
 
 .topbar {
-    background-color: var(--title-color);
+  background-color: var(--title-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +145,7 @@ input{
     border-bottom: 1px solid var(--title-color);
     background-color: var(--table2);
     border-radius: 8px;
-    width: 20%;
+    width: 12%;
 }
 
 button{
