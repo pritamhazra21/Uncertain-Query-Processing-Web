@@ -4,62 +4,51 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
 
-  }
-  
-  html{
-      scroll-behavior: smooth;
-  }
-
-/* :root{
-    --title-color: #40514e;
-    --foreground-color: #11999e;
-    --table1: #30e3ca;
-    --table2: #fef6f6;
 }
 
-:root{
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* :root {
     --title-color: #dba39a;
     --foreground-color: #f0dbdb;
     --table1: #f5ebe0;
     --table2: #fefcf3;
-}
+} */
 
-:root{
+/* :root {
     --title-color: #222831;
     --foreground-color: #393E46;
     --table1: #00ADB5;
     --table2: #EEEEEE;
-}
-:root{
+} */
+
+/* :root {
     --title-color: #7286D3;
     --foreground-color: #8EA7E9;
     --table1: #E5E0FF;
     --table2: #FFF2F2;
-}
-:root{
+} */
+
+/* :root {
     --title-color: #FD8A8A;
     --foreground-color: #F1F7B5;
     --table1: #A8D1D1;
     --table2: #9EA1D4;
-}
-:root{
-    --title-color: #58828B;
-    --foreground-color: #5E9387;
-    --table1: #C8E29D;
-    --table2: #F2F299;
-}
-:root{
-    --title-color: #E5D9B6;
-    --foreground-color: #A4BE7B;
-    --table1: #5F8D4E;
-    --table2: #285430;
-}
-:root{
+} */
+
+
+
+
+/* :root {
     --title-color: #285430;
     --foreground-color: #5F8D4E;
     --table1: #A4BE7B;
     --table2: #E5D9B6;
 } */
+
 :root{
     --title-color: #6E85B7;
     --foreground-color: #B2C8DF;
@@ -69,14 +58,14 @@
 
 .sidebar {
     height: 100%;
-    width: 35%;
+    width: 50%;
     position: fixed;
     top: 0;
     left: 0;
     overflow-x: hidden;
 }
 
-.top{
+.top {
     width: 100%;
     position: fixed;
     background-color: white;
@@ -86,10 +75,10 @@
 }
 
 .content {
-    margin-left: 35%;
+    margin-left: 50%;
 }
 
-.foreground{
+.foreground {
     background-color: var(--foreground-color);
     padding: 16px;
     margin: 16px;
@@ -100,25 +89,33 @@
 
 
 .topbar {
-  background-color: var(--title-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-color: var(--title-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.querybar {
+    background-color: var(--foreground-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
 #logo {
-  margin-right: 50%;
-  /* background-color: white; */
+    margin-right: 50%;
+    /* background-color: white; */
 }
 
 #logo img {
-  height: 35px;
+    height: 35px;
 }
 
 
 
-.upper-con{
+.upper-con {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,7 +123,8 @@
 
 
 
-.input-box, .container{
+.input-box,
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,11 +132,11 @@
 }
 
 
-.container{
+.container {
     flex-direction: column;
 }
 
-input{
+input {
     padding: 8px;
     margin: 5px 15px;
     border: none;
@@ -148,7 +146,7 @@ input{
     width: 12%;
 }
 
-button{
+button {
     padding: 8px;
     margin: 5px;
     border-radius: 8px;
@@ -158,27 +156,30 @@ button{
     background-color: var(--title-color);
 }
 
-button:hover {background-color: var(--table2)}
-
-button:active {
-  background-color: var(--table1);
-  transform: translateY(1px);
+button:hover {
+    background-color: var(--table2)
 }
 
-.container h4{
+button:active {
+    background-color: var(--table1);
+    transform: translateY(1px);
+}
+
+.container h4 {
     margin-top: 50px;
 }
 
 
+
 /* ############   TABLE   ########### */
 
-.content-table{
+.content-table {
     border-collapse: collapse;
     margin: 50px 0;
     min-width: 80%;
 }
 
-.content-table th{
+.content-table th {
     background-color: var(--title-color);
     text-align: left;
     font-weight: bold;
@@ -186,23 +187,19 @@ button:active {
 
 
 .content-table th,
-.content-table td{
+.content-table td {
     padding: 16px;
 
 }
 
-.content-table tr{
+.content-table tr {
     border-bottom: var(--title-color);
 }
 
-.content-table tr:nth-of-type(even){
+.content-table tr:nth-of-type(even) {
     background-color: var(--table1);
 }
-.content-table tr:nth-of-type(odd){
+
+.content-table tr:nth-of-type(odd) {
     background-color: var(--table2);
 }
-
-
-
-
-
