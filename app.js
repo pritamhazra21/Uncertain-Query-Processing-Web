@@ -33,7 +33,7 @@ function maintab(out) {
 
 function maintab1st(out) {
     let len = out.length;
-    var MainTableString = "<tr><th>City</th><th>Temp</th><th>Fuzzy Data Temp</th><th>mem1</th><th>precipitation</th></tr>";
+    var MainTableString = "<tr><th>City</th><th>Temp</th><th>Fuzzy Data Temp</th><th>µ1</th><th>precipitation</th></tr>";
     
     for (let i = 0; i < len; i++) {
         MainTableString += "<tr><td>" + out[i].city_name + "</td><td>" + out[i].temp_celsius + "</td><td>" + out[i].fuzzy_data_c + "</td><td>" + out[i].temp_c_membership + "</td><td>" + out[i].chances_of_precipitation + "</td></tr>";
@@ -44,7 +44,7 @@ function maintab1st(out) {
 
 function maintab2nd(out) {
     let len = out.length;
-    var MainTableString = "<tr><th>City</th><th>Temp</th><th>precipitation</th><th>Fuzzy Data Prec</th><th>mem2</th></tr>";
+    var MainTableString = "<tr><th>City</th><th>Temp</th><th>precipitation</th><th>Fuzzy Data Prec</th><th>µ2</th></tr>";
     
     for (let i = 0; i < len; i++) {
         MainTableString += "<tr><td>" + out[i].city_name + "</td><td>" + out[i].temp_celsius + "</td><td>" + out[i].chances_of_precipitation + "</td><td>" + out[i].fuzzy_data_p + "</td><td> " + out[i].precipitation_membership + "</td></tr>";
@@ -55,7 +55,7 @@ function maintab2nd(out) {
 
 function maintab3rd(out) {
     let len = out.length;
-    var MainTableString = "<tr><th>City</th><th>Temp</th><th>Fuzzy Data Temp</th><th>mem1</th><th>precipitation</th><th>Fuzzy Data Prec</th><th>mem2</th><th>mem3</th></tr>";
+    var MainTableString = "<tr><th>City</th><th>Temp</th><th>Fuzzy Data Temp</th><th>µ1</th><th>precipitation</th><th>Fuzzy Data Prec</th><th>µ2</th><th>µ = µ1 ∩ µ2</th></tr>";
 
     for (let i = 0; i < len; i++) {
         MainTableString += "<tr><td>" + out[i].city_name + "</td><td>" + out[i].temp_celsius + "</td><td>" + out[i].fuzzy_data_c + "</td><td>" + out[i].temp_c_membership + "</td><td>" + out[i].chances_of_precipitation + "</td><td>" + out[i].fuzzy_data_p + "</td><td> " + out[i].precipitation_membership + "</td><td>" + out[i].combined_membership + "</td></tr>";

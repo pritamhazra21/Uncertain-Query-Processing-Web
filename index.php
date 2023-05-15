@@ -19,7 +19,7 @@
         
         <section class="upper-con">
             <div class="foreground container">
-                <h4>Main Table</h4>
+                <h4>Weather Table</h4>
                 <table id="main-table" class="content-table">
     
                 </table>
